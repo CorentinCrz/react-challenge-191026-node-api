@@ -5,6 +5,7 @@ import 'dotenv/config';
 
 const routerHome = require('./routes/home');
 const routerUser = require('./routes/user');
+const routerTeacher = require('./routes/teacher');
 
 const app = express();
 app.use(cors());
@@ -13,7 +14,8 @@ app.use(express.json());
 
 
 app.use('/', routerHome);
-app.use('/messages', routerUser);
+app.use('/users', routerUser);
+app.use('/teachers', routerTeacher);
 
 app.listen(
     process.env.PORT,

@@ -35,5 +35,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.user = require('./user')(sequelize, Sequelize)
+db.teacher = require('./teacher')(sequelize, Sequelize)
+db.teacher.belongsTo(db.user)
 
 export default db;
